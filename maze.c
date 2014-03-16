@@ -50,7 +50,7 @@ void init()
     food.y= rand() % COLS;
     food.x= rand() % (LINES-2) + 2;
     create_link();
-    alarm(1);
+    ualarm(50000, 100000);
 }    
 
 void show_snake()
@@ -80,7 +80,6 @@ void show_snake()
     move(head->next->x,head->next->y);
     waddstr(stdscr,"#");
     refresh();
-    alarm(1);
 }
 
 int get_station()
