@@ -28,12 +28,14 @@ node *talloc(void)
 point food,pt;
 node *head,*tail;
 int length;
+
 int main()
 {
     init();
     signal(SIGALRM,show_snake);
     get_station();
 }
+
 void init()
 {
     initscr();//初始化屏幕 不过现在我们并没有建立自己的窗口 用的是标准屏幕 类似于c的stdin 
@@ -79,6 +81,7 @@ void show_snake()
     refresh();
     alarm(1);
 }
+
 int get_station()
 {
   while(1)  
@@ -106,6 +109,7 @@ int get_station()
     }
   }  
 }
+
 void create_link()
 {
     head=tail=talloc();
@@ -120,6 +124,7 @@ void create_link()
     tail->back = t;
     t->back = head; 
 }
+
 void insert_node(int x,int y)//蛇每前进一步增加一个链表节点
 {
     node *t;
@@ -131,6 +136,7 @@ void insert_node(int x,int y)//蛇每前进一步增加一个链表节点
     t->x=x;
     t->y=y;//在head和head->next 中插入t 
 }
+
 void delete_node()
 {
     node *t= tail->back;
