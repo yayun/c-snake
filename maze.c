@@ -51,7 +51,8 @@ void init()
     food.x= rand() % (LINES-2) + 2;
     create_link();
     alarm(1);
-}           
+}    
+
 void show_snake()
 {
     bool len_increase=false;
